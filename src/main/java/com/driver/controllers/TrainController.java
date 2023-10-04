@@ -4,15 +4,8 @@ import com.driver.EntryDto.AddTrainEntryDto;
 import com.driver.EntryDto.SeatAvailabilityEntryDto;
 import com.driver.model.Station;
 import com.driver.services.TrainService;
-import io.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalTime;
 import java.util.List;
@@ -30,7 +23,6 @@ public class TrainController {
         //We need to return the trainId of the newly added train
         Integer trainId = trainService.addTrain(train);
         return trainId;
-
     }
 
     @GetMapping("/calculate-avaiable-seats")
